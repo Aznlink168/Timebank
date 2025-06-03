@@ -4,12 +4,11 @@ namespace App\Livewire\ServiceRequests;
 
 use App\Models\ServiceRequest;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class DetailView extends Component
 {
     public ServiceRequest $serviceRequest;
-
-use Illuminate\Support\Facades\Auth; // Added for Auth
 
     public function mount(ServiceRequest $serviceRequest)
     {
