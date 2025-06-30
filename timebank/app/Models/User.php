@@ -27,7 +27,7 @@ class User extends Authenticatable
         'availability_details', // Text field for general availability notes
         'phone_number', // User's phone number, potentially for SMS notifications
         'notification_preference', // User's preferred notification method e.g., 'email', 'sms', 'both'
-        // 'is_admin' // This column's migration failed, so it's commented out here.
+        'is_admin'
     ];
 
     /**
@@ -48,7 +48,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        // 'is_admin' => 'boolean', // Cast for is_admin if column existed
+        'is_admin' => 'boolean',
     ];
 
     /**

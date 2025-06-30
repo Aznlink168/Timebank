@@ -20,7 +20,7 @@ class CheckUserSchema extends Command
      *
      * @var string
      */
-    protected $description = 'Checks if phone_number and notification_preference columns exist in the users table.';
+    protected $description = 'Checks if phone_number, notification_preference, and is_admin columns exist in the users table.';
 
     /**
      * Execute the console command.
@@ -44,6 +44,7 @@ class CheckUserSchema extends Command
 
         $hasPhoneNumber = Schema::hasColumn($tableName, 'phone_number');
         $hasNotificationPreference = Schema::hasColumn($tableName, 'notification_preference');
+        $hasIsAdmin = Schema::hasColumn($tableName, 'is_admin');
 
         if ($hasPhoneNumber) {
             $this->info("Column 'phone_number' exists in '{$tableName}' table.");
@@ -57,7 +58,13 @@ class CheckUserSchema extends Command
             $this->warn("Column 'notification_preference' does NOT exist in '{$tableName}' table.");
         }
 
-        if (!$hasPhoneNumber || !$hasNotificationPreference) {
+        if ($hasIsAdmin) {
+            $this->info("Column 'is_admin' exists in '{$tableName}' table.");
+        } else {
+            $this->warn("Column 'is_admin' does NOT exist in '{$tableName}' table.");
+        }
+
+        if (!$hasPhoneNumber || !$hasNotificationPreference || !$hasIsAdmin) {
             $this->line("One or more columns are missing. You might need to run migrations: php artisan migrate");
         }
 

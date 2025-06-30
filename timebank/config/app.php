@@ -14,7 +14,7 @@ return [
     | Populate this via the ADMIN_USER_EMAILS environment variable (comma-separated).
     |
     */
-    'admin_users' => array_filter(array_map('trim', explode(',', env('ADMIN_USER_EMAILS', 'admin@example.com')))),
+    // 'admin_users' => array_filter(array_map('trim', explode(',', env('ADMIN_USER_EMAILS', 'admin@example.com')))), // Deprecated: Admin users are now managed via the 'is_admin' flag in the 'users' table.
 
 
     /*
