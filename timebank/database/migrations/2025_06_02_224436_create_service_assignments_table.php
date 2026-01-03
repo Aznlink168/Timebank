@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('service_assignments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('service_request_id')->constrained()->onDelete('cascade');
+            $table->foreignId('volunteer_id')->constrained('users')->onDelete('cascade');
+            $table->timestamp('assigned_at')->nullable();
+            $table->timestamp('started_at')->nullable();
+            $table->timestamp('completed_at')->nullable();
+            $table->string('status')->default('pending_acceptance');
+            $table->string('qr_code')->nullable()->unique();
             $table->timestamps();
         });
     }
