@@ -4,6 +4,7 @@ A Laravel-based community platform for exchanging services based on time rather 
 
 ## 📚 Documentation
 
+- **[Quick Start - Synology](QUICKSTART-SYNOLOGY.md)** - Get started in 3 steps! (🇩🇪 Schnellstart in 3 Schritten)
 - **[Setup Guide](SETUP.md)** - Complete installation and configuration instructions
 - **[Synology Deployment](SYNOLOGY-DEPLOYMENT.md)** - Deploy to Synology NAS with Docker (🇩🇪 Deutsche Anleitung verfügbar)
 
