@@ -1,0 +1,59 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+SETUP.md
+SYNOLOGY-DEPLOYMENT.md
+
+# IDE
+.idea
+.vscode
+.fleet
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies (will be installed in container)
+timebank/node_modules
+timebank/vendor
+
+# Build artifacts
+timebank/public/hot
+timebank/public/build
+timebank/public/storage
+
+# Environment
+timebank/.env
+timebank/.env.backup
+timebank/.env.production
+
+# Storage
+timebank/storage/logs/*
+timebank/storage/framework/cache/*
+timebank/storage/framework/sessions/*
+timebank/storage/framework/views/*
+!timebank/storage/logs/.gitkeep
+!timebank/storage/framework/cache/.gitkeep
+!timebank/storage/framework/sessions/.gitkeep
+!timebank/storage/framework/views/.gitkeep
+
+# Testing
+timebank/.phpunit.result.cache
+timebank/phpunit.xml
+
+# Database
+timebank/database/database.sqlite
+
+# Scripts
+sync-to-synology.sh
+
+# Docker
+docker-compose.yml
+Dockerfile

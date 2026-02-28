@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('availability_exceptions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->date('date');
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
+            $table->boolean('is_unavailable')->default(true);
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

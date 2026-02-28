@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('service_requests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('requester_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('service_category_id')->constrained('service_categories')->onDelete('cascade');
+            $table->string('title');
+            $table->text('description');
+            $table->string('status')->default('pending');
+            $table->string('location')->nullable();
+            $table->json('required_skills')->nullable();
+            $table->string('urgency')->default('medium');
             $table->timestamps();
         });
     }
