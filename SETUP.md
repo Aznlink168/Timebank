@@ -4,6 +4,14 @@
 
 Timebank is a Laravel-based community platform where users can offer their skills and services, or request help from others. The platform enables time-based exchange of services within a community.
 
+## 🚀 Quick Start Options
+
+Choose the deployment method that best suits your needs:
+
+- **🐳 [Deploy to Synology NAS](SYNOLOGY-DEPLOYMENT.md)** - Quick Docker-based deployment for Synology devices
+- **💻 Local Development** - Follow the instructions below for traditional setup
+- **☁️ Cloud Deployment** - Use Docker Compose for any cloud provider
+
 ## Prerequisites
 
 - PHP 8.1 or higher
